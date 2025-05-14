@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Magic: The Gathering - Buscador de Cartas</title>
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Buscador de Cartas de Magic</h1>
+      <p>Pesquise cartas do Magic: The Gathering usando a API Scryfall</p>
+    </header>
+    
+    <div class="search-container">
+      <div class="search-input-container">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="Digite o nome ou critérios de busca..."
+          autocomplete="off"
+        >
+        <div id="suggestions" class="suggestions"></div>
+      </div>
+      <button id="search-button">Buscar</button>
+    </div>
+    
+    <div class="filters">
+      <p><strong>Dicas de busca:</strong> Você pode usar operadores como "t:creature", "c:red", "cmc>3" etc.</p>
+    </div>
+    
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+      <p>Carregando resultados...</p>
+    </div>
+    
+    <div id="results" class="results-container"></div>
+    
+    <div id="pagination" class="pagination"></div>
+  </div>
+  
+  <!-- Scripts -->
+  <script src="assets/js/services/api.js"></script>
+  <script src="assets/js/utils/helpers.js"></script>
+  <script src="assets/js/components/cardElement.js"></script>
+  <script src="assets/js/components/searchBar.js"></script>
+  <script src="assets/js/components/pagination.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

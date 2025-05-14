@@ -5,8 +5,8 @@ const fetch = require('node-fetch'); // Se estiver usando Node.js < 18, instale:
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Servir arquivos estáticos da pasta public
-app.use(express.static(path.join(__dirname, 'public')));
+// Servir arquivos estáticos da pasta raiz e assets
+app.use(express.static(path.join(__dirname)));
 
 // Endpoint para buscar cartas através da API do Scryfall
 app.get('/api/search', async (req, res) => {
@@ -52,7 +52,7 @@ app.get('/api/autocomplete', async (req, res) => {
 
 // Rota para a página inicial
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
